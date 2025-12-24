@@ -7,7 +7,7 @@ public class Categoria {
 
 	private String nomeCat;
 	private String descricao;
-	private ArrayList<ItemColecao> itens;
+	private ArrayList<ItemCollecao> itens;
 	
 	
 	
@@ -34,18 +34,35 @@ public class Categoria {
 		this.descricao= descricao;
 	}
 	
-	public List<ItemColecao> getItens(){
+	public List<ItemCollecao> getItens(){
 		return itens;
 	}
 	
-	public void adicionarItem(ItemColecao item) {
+	public void adicionarItem(ItemCollecao item) {
 		itens.add(item);
 	}
-	public void removerItem(ItemColecao item) {
+	public void removerItem(ItemCollecao item) {
 		itens.remove(item);
 	}
 	
-	public String toString() {
+	public boolean equals(Object obj) {
+		boolean iguais = false;
+		if(obj != null && this.getClass() == obj.getClass()) {
+			Categoria cat =(Categoria) obj;
+			iguais = this.nomeCat.equals(cat.nomeCat)&&
+					this.descricao.equals(cat.descricao)&&
+					this.itens.equals(cat.itens);
+		}
+		return iguais;
+		
+	}
+	
+	public Object clone() {
+		Categoria clone = new Categoria() ;
+		clone.nomeCat = this.nomeCat;
+		clone.descricao = this.descricao;
+		clone.itens = new ArrayList<>();
+		return clone;
 		
 	}
 	

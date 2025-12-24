@@ -4,11 +4,28 @@ import java.util.ArrayList;
 import myinputs.Ler;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
+import java.util.*;
 
 public class Collex {
 	
+	Ao iniciar tentar carregar CollexFunc com o FileManager
+	
+	o menu deve ter as opcoes :
+		1. Gerir Itens
+		2. Gerir Contactos
+		3. Registar Movimentos
+		4. Ver estatisticas
+		0. Sair (guardar estado)
+		Ler opção do utilizador via scanner e chamar os metodos de CollexFunc e EstatisticasCollex
+		Ao sair guardar o objeto CollexFunc com o FileManager
+	
+	
+	
+	
 	public static void main(String[] args) {
+			
+			Scanner sc = new Scanner(System.in);
+			
 		
 		
 		System.out.println("Welcome to Collex, your organization app!");
@@ -49,6 +66,7 @@ public class Collex {
 							optF= Ler.umInt();
 							switch(optF) {
 							case 1:
+								
 								
 							
 							}

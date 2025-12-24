@@ -1,18 +1,28 @@
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ItemColecao implements Serializable{
+public class ItemCollecao implements Serializable{
 	
 	private String nome;
 	private String descricao;
 	private LocalDate dataAquis;
+	private Categoria categoria;
 	private double valorPago;
 	private double valorEst;
 	
-	public ItemColecao (String nome, String descricao, LocalDate dataAquis, double valorPago, double valorEst) {
+	public ItemCollecao() {
+		this.nome= "";
+		this.descricao = "";
+		this.dataAquis= LocalDate.now() ;
+		this.categoria = null;
+		this.valorPago= 0.0;
+		this.valorEst = 0.0;
+	}
+	public ItemCollecao (String nome, String descricao, LocalDate dataAquis, double valorPago, double valorEst) {
 		this.nome= nome;
 		this.descricao = descricao;
 		this.dataAquis = dataAquis;
+		this.categoria = categoria;
 		this.valorPago = valorPago;
 		this.valorEst = valorEst;
 	}
@@ -35,10 +45,16 @@ public class ItemColecao implements Serializable{
 	public void setDataAquis(LocalDate dataAquis) {
 		this.dataAquis = dataAquis;
 	}
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
 	public double getValorPago() {
 		return valorPago;
 	}
-	public void setVlaorPago(double valorPago) {
+	public void setValorPago(double valorPago) {
 		this.valorPago = valorPago;
 	}
 	public double getValorEst() {
@@ -50,9 +66,32 @@ public class ItemColecao implements Serializable{
 	
 	public String toString() {
 		String s;
-		s= "Nome: \n" + nome + "Descrição: \n" + descricao +"Data de aquisição: \n" + dataAquis + "Valor Pago: \n" + valorPago + "Valor Estimado: \n" + valorEst;
+		s= "Nome: \n" + nome + 
+				"Descrição: \n" + descricao +
+				"Data de aquisição: \n" + dataAquis + 
+				"Categoria: \n" + categoria +
+				"Valor Pago: \n" + valorPago + 
+				"Valor Estimado: \n" + valorEst;
 		
 		return s;
 		
+	}
+	
+	public boolean euqls(Object obj) {
+		boolean iguais = false;
+		if(obj != null && this.getClass() == obj.getClass()) {
+			ItemCollecao itc = (ItemCollecao) obj;
+			iguais = this.nome.equals(itc.nome)&&
+					this.descricao.equals(itc.descricao)&&
+					this.dataAquis.equals(itc.dataAquis)&&
+					this.valorPago == itc.valorPago &&
+					this.valorEst == itc.valorEst;
+		}
+		return iguais;
+	}
+	
+	public Object clone() {
+		ItemCollecao clone = new ItemCollecao(this.nome, this.descricao, this.dataAquis, this.valorPago, this.valorEst );
+		return clone;
 	}
 }
