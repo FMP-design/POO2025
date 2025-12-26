@@ -138,14 +138,7 @@ public class CollexFunc {
     public ArrayList<Movimento> getMovimentos(){
     	return movimentos;
     }
-    
-    List<Movimento> resultado = new ArrayList<>();
-    for(int i = 0; i< movimentos.size(); i++) {
-    	if(movimentos.get(i).getTipo()==tipo) {
-    		resultado.add(movimentos.get(i));
-    		
-    	}
-    }
+ 
     
     public List<Movimento> getMovimentosPorTipo(Movimento.Tipo tipo) {
     	List<Movimento> resultado = new ArrayList<>();

@@ -1,21 +1,49 @@
 package controller;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import java.io.IOException;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class MainController {
 
     @FXML
-    private TextField trtitle;
+    private void handleColecoesButton(ActionEvent event) {
+        trocarCena(event, "/view/colecoes_view.fxml", "Coleções");
+    }
 
     @FXML
-    private void btnOkClicked(ActionEvent event) {
-    	
-    	Stage mainWindow =(Stage) trtitle.getScene().getWindow();
-    	String title = trtitle.getText();
-    	mainWindow.setTitle(title);    	
-        /*System.out.println("Texto: " + trtitle.getText());*/
+    private void handleMovimentosButton(ActionEvent event) {
+        trocarCena(event, "/view/movimento_view.fxml", "Movimentos");
+    }
+
+    @FXML
+    private void handleEstatisticasButton(ActionEvent event) {
+        trocarCena(event, "/view/stats_view.fxml", "Estatísticas");
+    }
+
+    @FXML
+    private void handleSairButton() {
+        System.exit(0);
+    }
+
+    // Método genérico para trocar a cena no Stage atual
+    private void trocarCena(ActionEvent event, String fxmlPath, String titulo) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+            Scene scene = new Scene(root);
+
+            // Pega o Stage atual a partir do botão clicado
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle(titulo);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
