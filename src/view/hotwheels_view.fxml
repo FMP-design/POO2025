@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <Label alignment="TOP_CENTER" prefHeight="40.0" style="-fx-background-color: orange; -fx-font-size: 32px; -fx-font-family: Georgia;" text="Hot Wheels" textAlignment="CENTER" textFill="#8c0000" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -185,9 +185,19 @@
       </ScrollPane>
    </center>
    <bottom>
-      <Button style="-fx-background-color: #C8A2C8; -fx-font-family: Georgia; -fx-font-size: 12px;" text="Voltar" textFill="#8c0000" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="-500.0" />
-         </BorderPane.margin></Button>
+      <HBox prefHeight="30.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button prefHeight="13.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-family: Georgia; -fx-font-size: 12px;" text="Voltar" textFill="#8c0000">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button prefHeight="13.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-family: Georgia; -fx-font-size: 12px;" text="Guardar" textFill="#8c0000">
+               <HBox.margin>
+                  <Insets left="400.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
    </bottom>
 </BorderPane>
