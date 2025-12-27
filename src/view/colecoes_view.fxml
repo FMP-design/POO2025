@@ -6,26 +6,47 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <Label alignment="CENTER" prefHeight="46.0" style="-fx-font-size: 36px; -fx-font-family: Georgia; -fx-text-alignment: center;" text="Coleções" textFill="#8c0000" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets top="40.0" />
-         </BorderPane.margin>
-      </Label>
-   </top>
-   <center>
-      <VBox alignment="CENTER" prefHeight="356.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Moedas" textFill="#8c0000" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Hot Wheels" textFill="#8c0000" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Funko Pops" textFill="#8c0000" />
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="114.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Perfumes" textFill="#8c0000" />
-            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="114.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Add Coleção" textFill="#8c0000" />
-         </children>
-         <BorderPane.margin>
-            <Insets top="30.0" />
-         </BorderPane.margin>
-      </VBox>
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ColecoesController">
+
+ 
+    <top>
+        <Label alignment="CENTER" prefHeight="46.0" style="-fx-font-size: 36px; -fx-font-family: Georgia; -fx-text-alignment: center;" text="Coleções" textFill="#8c0000" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="40.0" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="356.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Moedas" textFill="#8c0000" fx:id="btnMoedas" onAction="#handleMoedasButton" >
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Hot Wheels" textFill="#8c0000" fx:id="btnHotWheels" onAction="#handleHotWheelsButton">
+               <VBox.margin>
+                  <Insets top="-5.0" />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Funko Pops" textFill="#8c0000" fx:id="btnFunko" onAction="#handleFunkoButton">
+               <VBox.margin>
+                  <Insets top="-5.0" />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Perfumes" textFill="#8c0000" fx:id="btnPerfumes" onAction="#handlePerfumesButton">
+               <VBox.margin>
+                  <Insets top="-5.0" />
+               </VBox.margin></Button>
+                <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" style="-fx-font-family: Georgia; -fx-font-size: 16px; -fx-background-color: #C8A2C8;" text="Add Coleção" textFill="#8c0000">
+               <padding>
+                  <Insets bottom="230.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="-5.0" />
+               </VBox.margin></Button>
+            </children>
+            <BorderPane.margin>
+                <Insets top="30.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
 </BorderPane>

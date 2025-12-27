@@ -1,26 +1,25 @@
+package controller;
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class ItemCollecao implements Serializable{
 	
 	private String nome;
-	private String descricao;
+
 	private LocalDate dataAquis;
 	private Categoria categoria;
 	private double valorPago;
 	private double valorEst;
 	
 	public ItemCollecao() {
-		this.nome= "";
-		this.descricao = "";
+		this.nome= "";		
 		this.dataAquis= LocalDate.now() ;
 		this.categoria = null;
 		this.valorPago= 0.0;
 		this.valorEst = 0.0;
 	}
-	public ItemCollecao (String nome, String descricao, LocalDate dataAquis, double valorPago, double valorEst) {
-		this.nome= nome;
-		this.descricao = descricao;
+	public ItemCollecao (String nome, LocalDate dataAquis, double valorPago, double valorEst) {
+		this.nome= nome;	
 		this.dataAquis = dataAquis;
 		this.categoria = categoria;
 		this.valorPago = valorPago;
@@ -33,12 +32,8 @@ public class ItemCollecao implements Serializable{
 	public void setNome(String nome) {
 		this.nome=nome;
 	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+	
+	
 	public LocalDate getDataAquis () {
 		return dataAquis;
 	}
@@ -67,7 +62,6 @@ public class ItemCollecao implements Serializable{
 	public String toString() {
 		String s;
 		s= "Nome: \n" + nome + 
-				"Descrição: \n" + descricao +
 				"Data de aquisição: \n" + dataAquis + 
 				"Categoria: \n" + categoria +
 				"Valor Pago: \n" + valorPago + 
@@ -82,7 +76,6 @@ public class ItemCollecao implements Serializable{
 		if(obj != null && this.getClass() == obj.getClass()) {
 			ItemCollecao itc = (ItemCollecao) obj;
 			iguais = this.nome.equals(itc.nome)&&
-					this.descricao.equals(itc.descricao)&&
 					this.dataAquis.equals(itc.dataAquis)&&
 					this.valorPago == itc.valorPago &&
 					this.valorEst == itc.valorEst;
@@ -91,7 +84,7 @@ public class ItemCollecao implements Serializable{
 	}
 	
 	public Object clone() {
-		ItemCollecao clone = new ItemCollecao(this.nome, this.descricao, this.dataAquis, this.valorPago, this.valorEst );
+		ItemCollecao clone = new ItemCollecao(this.nome, this.dataAquis, this.valorPago, this.valorEst );
 		return clone;
 	}
 }

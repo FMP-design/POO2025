@@ -18,7 +18,7 @@ public class MainController {
 
     @FXML
     private void handleMovimentosButton(ActionEvent event) {
-        trocarCena(event, "/view/movimento_view.fxml", "Movimentos");
+        trocarCena(event, "/view/movimentos_view.fxml", "Movimentos");
     }
 
     @FXML

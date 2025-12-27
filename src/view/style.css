@@ -1,5 +1,5 @@
 .button {
-    -fx-background-color: linear-gradient( #C8A2C8); /* cor de fundo */
+    -fx-background-color: linear-gradient( #C8A2C8, #C8A2C8); /* cor de fundo */
     -fx-border-color: #C8A2C8;   /* cor da linha/borda */
     -fx-border-width: 2;         /* espessura da borda */
     -fx-border-radius: 8;        /* cantos arredondados da borda */
@@ -14,3 +14,7 @@
     -fx-background-color: linear-gradient(#ffdd00, #f0a500); /* fundo ao passar o rato */
     -fx-border-color: #990000;  /* muda a cor da borda no hover se quiser */
 }
+
+
+
+
