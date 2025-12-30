@@ -27,16 +27,11 @@ public class AddColecaoController {
     @FXML
     public void criarColecao() {
 
-        String nome = txtNomeColecao.getText().trim();
-
-        if (nome.isEmpty()) {
-            lblErro.setText("⚠ Escreve um nome para a coleção.");
-            return;
-        }
+        String nome = txtNomeColecao.getText();
 
         try {
 
-            // ---- agora criamos .dat ----
+           
             File file = new File(BASE_PATH + nome + ".dat");
 
             if (file.exists()) {
@@ -53,7 +48,7 @@ public class AddColecaoController {
             oos.close();
 
 
-            // ----- abrir a nova view -----
+            // abrir a view nova
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("/view/nova_view.fxml")
             );
@@ -69,7 +64,7 @@ public class AddColecaoController {
             novaJanela.show();
 
 
-            // ----- fechar esta janela -----
+            //fecha janela
             Stage janelaAtual = (Stage) txtNomeColecao.getScene().getWindow();
             janelaAtual.close();
 

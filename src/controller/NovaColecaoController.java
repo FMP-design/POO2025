@@ -74,7 +74,7 @@ public class NovaColecaoController {
     }
 
 
-    // ---------- GRAVAR OBJETO ----------
+    //Guardar o item novo
     @FXML
     private void guardarNoTxt() {
 
@@ -84,9 +84,13 @@ public class NovaColecaoController {
             List<ItemColecao> itens = lerItensDoFicheiro(file);
 
             LocalDate data = null;
-            if (!tfData.getText().isBlank()) {
-                data = LocalDate.parse(tfData.getText()); // formato yyyy-MM-dd
+
+            String textoData = tfData.getText();
+
+            if (textoData != null && textoData.length() > 0) {
+                data = LocalDate.parse(textoData);
             }
+
 
             ItemColecao item = new ItemColecao(
                     tfNome.getText(),
@@ -123,7 +127,7 @@ public class NovaColecaoController {
     }
 
 
-    // ---------- REMOVER ----------
+    // remover um item
     @FXML
     private void removerItem() {
 
@@ -150,12 +154,15 @@ public class NovaColecaoController {
 
 
 
-    // ---------- LER LISTA ----------
+    // le a list
     private List<ItemColecao> lerItensDoFicheiro(File file) {
 
         List<ItemColecao> lista = new ArrayList<>();
 
-        if (!file.exists()) return lista;
+        if (file.exists() == false) { 
+            return lista;
+        }
+
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
 
@@ -187,7 +194,9 @@ public class NovaColecaoController {
         File file = new File(BASE_PATH + nomeColecao + ".dat");
         List<ItemColecao> itens = lerItensDoFicheiro(file);
 
-        for (ItemColecao item : itens) {
+        for (int i = 0; i < itens.size(); i++) {
+
+            ItemColecao item = itens.get(i);
 
             HBox box = new HBox(10);
             box.setStyle(
@@ -222,6 +231,7 @@ public class NovaColecaoController {
             vboxItens.getChildren().add(box);
         }
     }
+
     
     @FXML
     private void handleVoltar(ActionEvent event) {

@@ -40,17 +40,23 @@ public class TrocasController {
 
         File pasta = new File(CAMINHO);
 
-        if (pasta.exists() == false) return;
+        if (pasta.exists() == false) {
+        	return;
+        }
 
         File[] ficheiros = pasta.listFiles();
 
-        if (ficheiros == null) return;
+        if (ficheiros == null){
+        	return;
+        }
 
         for (int i = 0; i < ficheiros.length; i++) {
 
             File f = ficheiros[i];
 
-            if (f.getName().endsWith(".dat") == false) continue;
+            if (f.getName().endsWith(".dat") == false) {
+            	continue;
+            }
 
             try {
 

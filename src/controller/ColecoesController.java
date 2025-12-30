@@ -30,7 +30,7 @@ public class ColecoesController {
     @FXML
     private VBox vboxDinamico;
 
-    private final String BASE_PATH =
+    private String BASE_PATH =
             "C:\\Users\\fm\\eclipse-workspace\\Collex\\fnFiles\\";
 
 

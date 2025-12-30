@@ -40,11 +40,15 @@ public class VendasController {
 
         File pasta = new File(CAMINHO);
 
-        if (pasta.exists() == false) return;
+        if (pasta.exists() == false) {
+        	return;
+        }
 
         File[] ficheiros = pasta.listFiles();
 
-        if (ficheiros == null) return;
+        if (ficheiros == null) {
+        	return;
+        }
 
         for (int i = 0; i < ficheiros.length; i++) {
 
@@ -65,8 +69,7 @@ public class VendasController {
 
                     ItemColecao item = (ItemColecao) lista.get(j);
 
-                    if (item.getTipo() != null &&
-                        item.getTipo().equals("Venda")) {
+                    if (item.getTipo() != null && item.getTipo().equals("Venda")) {
 
                         vendas.add(item);
                     }
@@ -98,9 +101,7 @@ public class VendasController {
 
             if (v.getImagem() != null && v.getImagem().isEmpty() == false) {
 
-                Image imagem =
-                        new Image("file:" + v.getImagem(), 100, 0, true, true);
-
+                Image imagem =new Image("file:" + v.getImagem(), 100, 0, true, true);
                 img.setImage(imagem);
             }
 
@@ -130,11 +131,8 @@ public class VendasController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();
+            stage.show();   
             
-            
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

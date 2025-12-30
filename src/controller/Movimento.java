@@ -62,11 +62,11 @@ public class Movimento implements Serializable {
 	
 	public boolean equals (Object obj) {
 		boolean iguais = false;
-		if (obj != null || this.getClass() == obj.getClass()) {
+		if (obj != null && this.getClass() == obj.getClass()) {
 			Movimento mov = (Movimento) obj;
 			iguais = this.data.equals(mov.data)&&
 					this.itemCollecao.equals(mov.itemCollecao)&&
-					this.tipo ==mov.tipo &&
+					this.tipo == mov.tipo &&
 					this.valor == mov.valor;			
 		}
 		return iguais;

@@ -41,6 +41,7 @@ public class Categoria implements Serializable {
 
     @Override
     public Object clone() {
-        return new Categoria(this.nome);
+        Categoria clone = new Categoria (this.nome);
+        return clone;
     }
 }

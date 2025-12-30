@@ -59,7 +59,7 @@
                             </HBox>
 
                             <HBox spacing="10">
-                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georgia;" text="Data Compra:" textFill="#8c0000" />
+                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georgia;" text="Data Aquisição" textFill="#8c0000" />
                                 <TextField fx:id="tfData" style="-fx-background-color: #C8A2C8;" />
                             </HBox>
 
