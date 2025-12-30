@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Movimento implements Serializable {
 	public LocalDate data;
 	public ItemCollecao itemCollecao;
-	public Contacto contacto;
+
 	private double valor;
 	private Tipo tipo;
 	
@@ -18,7 +18,7 @@ public class Movimento implements Serializable {
 	public Movimento() {
 		data = LocalDate.now();
 		itemCollecao = new ItemCollecao();
-		contacto = new Contacto();
+		
 		tipo = Tipo.COMPRA;
 		valor = 0.0;
 }
@@ -43,14 +43,7 @@ public class Movimento implements Serializable {
 		return itemCollecao;
 	}
 	
-	public void setContacto(Contacto contacto) {
-		this.contacto = contacto;
-	}
-	
-	public Contacto getContacto() {
-		return contacto;
-	}
-	
+		
 	public Tipo getTipo() {
 		return tipo;
 	}
@@ -73,7 +66,6 @@ public class Movimento implements Serializable {
 			Movimento mov = (Movimento) obj;
 			iguais = this.data.equals(mov.data)&&
 					this.itemCollecao.equals(mov.itemCollecao)&&
-					this.contacto.equals(mov.contacto)&&
 					this.tipo ==mov.tipo &&
 					this.valor == mov.valor;			
 		}
@@ -84,7 +76,6 @@ public class Movimento implements Serializable {
 		Movimento clone = new Movimento();
 		clone.data = this.data;
 		clone.itemCollecao = this.itemCollecao;
-		clone.contacto = this.contacto;
 		clone.valor=this.valor;
 		clone.tipo = this.tipo;
 		return clone;

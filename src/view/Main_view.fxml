@@ -19,12 +19,12 @@
       </Label>
    </top>
    <center>
-      <VBox prefHeight="356.0" prefWidth="600.0" spacing="30.0" fillWidth="true" alignment="CENTER" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" fillWidth="true" prefHeight="356.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnColecoes" onAction="#handleColecoesButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Coleções" textAlignment="CENTER" textFill="#8c0000"/>
-            <Button fx:id="btnMovimentos" onAction="#handleMovimentosButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="137.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Movimentos" textAlignment="CENTER" textFill="#8c0000"/>
-            <Button fx:id="btnEstatisticas" onAction="#handleEstatisticasButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Estatísticas" textAlignment="CENTER" textFill="#8c0000"/>
-            <Button fx:id="btnSair" onAction="#handleSairButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Sair" textAlignment="CENTER" textFill="#8c0000"/>
+            <Button fx:id="btnColecoes" mnemonicParsing="false" onAction="#handleColecoesButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text="Coleções" textAlignment="CENTER" textFill="#8c0000" />
+            <Button fx:id="btnMovimentos" mnemonicParsing="false" onAction="#handleMovimentosButton" prefHeight="26.0" prefWidth="137.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text="Movimentos" textAlignment="CENTER" textFill="#8c0000" />
+            <Button fx:id="btnEstatisticas" mnemonicParsing="false" onAction="#handleEstatisticasButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text="Estatísticas" textAlignment="CENTER" textFill="#8c0000" />
+            <Button fx:id="btnSair" mnemonicParsing="false" onAction="#handleSairButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text="Sair" textAlignment="CENTER" textFill="#8c0000" />
          </children>
          <BorderPane.margin>
             <Insets top="30.0" />

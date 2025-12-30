@@ -23,7 +23,7 @@ public class MainController {
 
     @FXML
     private void handleEstatisticasButton(ActionEvent event) {
-        trocarCena(event, "/view/stats_view.fxml", "Estatísticas");
+        trocarCena(event, "/view/estatisticas_view.fxml", "Estatísticas");
     }
 
     @FXML
@@ -34,16 +34,23 @@ public class MainController {
     // Método genérico para trocar a cena no Stage atual
     private void trocarCena(ActionEvent event, String fxmlPath, String titulo) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+            var url = getClass().getResource(fxmlPath);
+
+            if (url == null) {
+                throw new IllegalStateException("FXML não encontrado: " + fxmlPath);
+            }
+
+            Parent root = FXMLLoader.load(url);
             Scene scene = new Scene(root);
 
-            // Pega o Stage atual a partir do botão clicado
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.setTitle(titulo);
             stage.show();
-        } catch (IOException e) {
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }

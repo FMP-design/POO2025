@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400" prefWidth="600" style="-fx-background-color: orange;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NovaColecaoController">
+
+    <top>
+        <Label fx:id="lblTitulo" style="-fx-background-color: orange; -fx-font-size: 32px; -fx-font-family: Georgia;" textFill="#8c0000" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="15" top="10" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: purple;">
+
+            <content>
+                <VBox alignment="CENTER" spacing="20">
+
+                    <!-- 1️⃣ FORMULÁRIO (NÃO TEM fx:id) -->
+                    <HBox prefHeight="400.0" prefWidth="600.0" spacing="10" style="-fx-padding: 10; -fx-background-color: purple;">
+
+                        <VBox spacing="5">
+                            <ImageView fx:id="imgItem" fitHeight="150" fitWidth="200" preserveRatio="true" />
+                            <Button onAction="#escolherImagem" prefWidth="145" style="-fx-background-color:#C8A2C8; -fx-font-family: Georgia; -fx-font-size:14px;" text="Escolher Imagem" />
+                        </VBox>
+
+                        <VBox spacing="8">
+
+                            <HBox spacing="10">
+                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georgia;" text="Nome:" textFill="#8c0000" />
+                                <TextField fx:id="tfNome" style="-fx-background-color: #C8A2C8;" />
+                            </HBox>
+
+                            <HBox spacing="10">
+                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georgia;" text="Ano:" textFill="#8c0000" />
+                                <TextField fx:id="tfAno" style="-fx-background-color: #C8A2C8;" />
+                            </HBox>
+
+                            <HBox spacing="10">
+                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georgia;" text="Pago:" textFill="#8c0000" />
+                                <TextField fx:id="tfPago" style="-fx-background-color: #C8A2C8;" />
+                            </HBox>
+
+                            <HBox spacing="10">
+                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georgia;" text="Valor Estimado:" textFill="#8c0000" />
+                                <TextField fx:id="tfValorEstimado" style="-fx-background-color: #C8A2C8;" />
+                            </HBox>
+
+                            <HBox spacing="10">
+                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georgia;" text="Data Compra:" textFill="#8c0000" />
+                                <TextField fx:id="tfData" style="-fx-background-color: #C8A2C8;" />
+                            </HBox>
+
+                            <HBox spacing="10">
+                                <Label style="-fx-background-color: #C8A2C8; -fx-font-family: georiga;" text="Tipo:" textFill="#8c0000" />
+                                <ComboBox fx:id="cbTipo" prefWidth="120" style="-fx-background-color: #C8A2C8;" />
+                            </HBox>
+
+                        </VBox>
+                    </HBox>
+
+                    <!-- 2️⃣ LISTA DE ITENS AQUI -->
+                    <VBox fx:id="vboxItens" spacing="10" style="-fx-padding: 10;" />
+
+                </VBox>
+            </content>
+
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+
+            <Button onAction="#handleVoltar" style="-fx-font-size: 14px;" stylesheets="@style.css" text="&lt;- Voltar" />
+
+            <Region HBox.hgrow="ALWAYS" />
+
+            <Button onAction="#guardarNoTxt" style="-fx-font-size: 14px4;" stylesheets="@style.css" text="Guardar" />
+
+            <TextField fx:id="tfRemoverNome" promptText="Nome do item" style="-fx-background-color: #C8A2C8;" />
+
+            <Button onAction="#removerItem" style="-fx-font-size: 14px;" stylesheets="@style.css" text="Remover" />
+
+        </HBox>
+    </bottom>
+
+</BorderPane>

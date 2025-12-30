@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@style.css" fx:controller="controller.MovimentosController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: orange;" stylesheets="style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MovimentosController">
    <top>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="46.0" prefWidth="310.0" style="-fx-font-size: 36px; -fx-font-family: Georgia;" text="Movimentos" textAlignment="CENTER" textFill="#8c0000" textOverrun="CENTER_ELLIPSIS" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -19,18 +19,19 @@
       </Label>
    </top>
    <center>
-      <VBox alignment="CENTER" fillWidth="true" prefHeight="356.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" fillWidth="true" prefHeight="356.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: purple;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCompras" alignment="CENTER" mnemonicParsing="false" onAction="#handleComprasButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Compras" textAlignment="CENTER" textFill="#8c0000">
+            <Button fx:id="btnCompras" alignment="CENTER" mnemonicParsing="false" onAction="#abrirCompras" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text="Compras" textAlignment="CENTER" textFill="#8c0000">
                <VBox.margin>
                   <Insets />
                </VBox.margin></Button>
-            <Button fx:id="btnVendas" alignment="CENTER" mnemonicParsing="false" onAction="#handleVendasButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Vendas" textAlignment="CENTER" textFill="#8c0000" />
-            <Button fx:id="btnTrocas" alignment="CENTER" mnemonicParsing="false" onAction="#handleTrocasButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Trocas" textAlignment="CENTER" textFill="#8c0000" />
-            <Button fx:id="btnSair" alignment="CENTER" mnemonicParsing="false" onAction="#handleSairButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" text="Sair" textAlignment="CENTER" textFill="#8c0000">
+            <Button fx:id="btnVendas" alignment="CENTER" mnemonicParsing="false" onAction="#handleVendasButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text="Vendas" textAlignment="CENTER" textFill="#8c0000" />
+            <Button fx:id="btnTrocas" alignment="CENTER" mnemonicParsing="false" onAction="#handleTrocasButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text="Trocas" textAlignment="CENTER" textFill="#8c0000" />
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleVoltar" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: Georgia;" stylesheets="@style.css" text=" &lt;- Voltar" textAlignment="CENTER" textFill="#8c0000">
                <VBox.margin>
                   <Insets />
                </VBox.margin></Button>
+            <Button fx:id="btnBtn" mnemonicParsing="false" onAction="#handleSairButton" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #C8A2C8; -fx-font-size: 16px; -fx-font-family: georgia;" stylesheets="@style.css" text="Sair" textFill="#8c0000" />
          </children>
          <BorderPane.margin>
             <Insets top="30.0" />
